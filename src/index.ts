@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(healthRouter)
 app.use(authRouter)
 
+// 서버 시작
 app.listen(PORT, ()=>{
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 })

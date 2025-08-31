@@ -61,4 +61,12 @@ authRouter.post('/auth/login', async (req: Request, res:Response   )=>{
     res.status(200).json({token})
 })
 
+/**
+ * 유저 목록 조회
+ */
+authRouter.get('/auth/user/list', async (_req: Request, res: Response)=>{
+    users = readData<User>(usersFilePath);
+    res.status(200).json(users);
+})
+
 export default authRouter;
