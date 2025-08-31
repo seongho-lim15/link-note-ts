@@ -4,13 +4,9 @@ import {readData, saveData} from "@/utils/auth";
 import {randomUUID} from "node:crypto";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
-import * as process from "node:process";
-import dotenv from "dotenv";
 import {JWT_SECRET} from "@/config/env";
 
 const authRouter = Router();
-
-
 
 let users : User[]  = []
 let links: Link[] = [];
