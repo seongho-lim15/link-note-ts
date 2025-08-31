@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* 기본 옵션 */
+    "target": "ES2020",                       // 컴파일될 JavaScript 버전 설정
+    "module": "CommonJS",                     // 모듈 시스템 설정 (Node.js는 CommonJS 사용)
+    "outDir": "./dist",                       // 컴파일된 JavaScript 파일이 생성될 디렉토리
+    "rootDir": "./src",                       // TypeScript 소스 파일의 루트 디렉토리
+
+    /* 엄격한 타입 체크 옵션 */
+    "strict": true,                           // 모든 엄격한 타입 체크 옵션 활성화
+    "noImplicitAny": true,                    // 'any' 타입으로 암시적 변환 방지
+    "strictNullChecks": true,                 // null과 undefined를 모든 타입에서 분리
+
+    /* 모듈 해석 옵션 */
+    "moduleResolution": "node",               // 모듈 해석 방식 설정
+    "baseUrl": ".",                           // 절대 경로 임포트의 기준 디렉토리 설정
+    "paths": {                                // 경로 별칭 설정
+      "@/*": ["src/*"]
+    },
+    "esModuleInterop": true,                  // CommonJS 모듈을 ES6 모듈처럼 가져올 수 있게 함
+
+    /* 소스맵 & 디버깅 */
+    "sourceMap": true,                        // .map 파일 생성하여 디버깅 용이하게 함
+
+    /* 기타 옵션 */
+    "skipLibCheck": true,                     // 선언 파일(*.d.ts)의 타입 체크 스킵
+    "forceConsistentCasingInFileNames": true, // 파일 이름의 대소문자 일관성 강제
+    "experimentalDecorators": true,           // 데코레이터 실험적 기능 사용
+    "emitDecoratorMetadata": true             // 데코레이터 메타데이터 생성
+  },
+  "include": ["src/**/*"],                      // 컴파일할 파일 범위
+  "exclude": ["node_modules", "**/*.spec.ts"] // 컴파일에서 제외할 파일 또는 폴더
+}
