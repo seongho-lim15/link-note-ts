@@ -9,10 +9,7 @@ import {JWT_SECRET} from "@/config/env";
 const authRouter = Router();
 
 let users : User[]  = []
-let links: Link[] = [];
-
 const dataDir = path.join(__dirname, '../..', 'data')
-const linksFilePath = path.join(dataDir, 'links.json')
 const usersFilePath = path.join(dataDir, 'users.json')
 
 /**
