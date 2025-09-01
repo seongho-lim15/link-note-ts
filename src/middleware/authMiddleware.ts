@@ -2,6 +2,12 @@ import {NextFunction, Request, Response} from 'express';
 import jwt from "jsonwebtoken";
 import {JWT_SECRET} from "@/config/env";
 
+/**
+ * JWT 유효성 체크
+ * @param req
+ * @param res
+ * @param next
+ */
 export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const token = req.header('Authorization') ?? '';
 
