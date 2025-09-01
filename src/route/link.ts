@@ -6,7 +6,7 @@ import {saveData} from "@/utils/auth";
 
 const linkRouter = Router();
 
-linkRouter.use(authMiddleware);
+linkRouter.use(authMiddleware); // 권한 인증 미들웨어 추가
 
 let links: Link[] = [];
 const dataDir = path.join(__dirname, '../..', 'data')
@@ -16,9 +16,10 @@ const linksFilePath = path.join(dataDir, 'links.json')
  * 링크 등록
  */
 linkRouter.post('/link/add', (req: Request, res: Response)=>{
-    const {url, title, memo = "", userId} = req.body ?? {};
-
+    const {url, title, memo = ""} = req.body ?? {};
     if(!url || !title) return res.status(400).json({message: "URL 또는 제목을 입력해주세요."})
+
+    const userId = (req as any).userId; // Request 타입 확장을 했다면 req.userId로 바로 접근
     if(!userId) return res.status(400).json({message: "사용자가 존재하지 않습니다. "})
 
     const link: Link = {
@@ -33,6 +34,8 @@ linkRouter.post('/link/add', (req: Request, res: Response)=>{
 
     links.push(link);
     saveData<Link>(linksFilePath, links);
+
+    res.status(200).json({link});
 })
 
 export default linkRouter;

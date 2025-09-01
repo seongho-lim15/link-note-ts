@@ -1,0 +1,20 @@
+[
+  {
+    "url": "www.naver.com",
+    "title": "제목 테스트",
+    "memo": "메모 테스트",
+    "userId": "1fd6a68e-2467-4172-a55e-a3bd48adf312",
+    "id": "35db813e-2066-4a64-8851-2a4b46bc8ee5",
+    "createdAt": "2025-09-01T04:13:02.117Z",
+    "updatedAt": "2025-09-01T04:13:02.117Z"
+  },
+  {
+    "url": "www.naver.com",
+    "title": "제목 테스트",
+    "memo": "메모 테스트",
+    "userId": "1fd6a68e-2467-4172-a55e-a3bd48adf312",
+    "id": "56ef6a43-d364-4545-b1da-e2a7a4bfb941",
+    "createdAt": "2025-09-01T04:13:14.198Z",
+    "updatedAt": "2025-09-01T04:13:14.198Z"
+  }
+]

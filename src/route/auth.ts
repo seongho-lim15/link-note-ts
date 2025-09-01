@@ -54,7 +54,7 @@ authRouter.post('/auth/login', async (req: Request, res:Response   )=>{
     const ok = await bcrypt.compare(password, user.passwordHash)
     if(!ok) return res.status(401).json({message: "이메일 또는 비밀번호가 일치하지 않습니다."})
 
-    const token = jwt.sign({userId: user.id}, JWT_SECRET!, {expiresIn: '7d'})
+    const token = jwt.sign({}, JWT_SECRET!, {expiresIn: '7d', subject: user.id})
     res.status(200).json({token})
 })
 
